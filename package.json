@@ -1,0 +1,25 @@
+{
+  "name": "webpack_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules\\.bin\\webpack.cmd --mode development" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fujioka8700/webpack_practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fujioka8700/webpack_practice/issues"
+  },
+  "homepage": "https://github.com/fujioka8700/webpack_practice#readme",
+  "dependencies": {
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
