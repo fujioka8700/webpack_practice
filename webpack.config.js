@@ -1,19 +1,13 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-    context: __dirname,
-    devtool: debug ? "inline-sourcemap" : false,
-    entry: "./js/scripts.js",
-    output: {
-        path: __dirname + "/js",
-        filename: "scripts.min.js"
-    },
-    plugins: debug ? [] : [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: false,
-            sourcemap: false
-        }),
-    ]
+	// モード
+	mode: 'development',
+	// エントリーポイント
+	entry: './src/hello2.js',
+	// 出力するファイル
+	output: {
+		filename: 'bundle.js',
+		path: path.resolve(__dirname, 'dist')
+	}
 };
