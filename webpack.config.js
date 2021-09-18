@@ -1,13 +1,15 @@
-const path = require('path');
-
 module.exports = {
-	// モード
-	mode: 'development',
-	// エントリーポイント
-	entry: './src/hello2.js',
-	// 出力するファイル
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist')
-	}
-};
+    mode: 'development',
+
+    entry: `./src/index.js`,
+
+    output: {
+        path: `${__dirname}/dist`,
+        filename: 'main.js'
+    },
+
+    devServer: {
+        static: "dist",
+        open: true
+    }
+}
