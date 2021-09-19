@@ -1,4 +1,4 @@
-const VueLoaderPlugin = require('vue-loader');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
     mode: 'development',
@@ -36,9 +36,22 @@ module.exports = {
                 },
             }, ],
         }, ],
-
-        // resolveから。
     },
+
+    // import文で .ts ファイルを解決するため
+    resolve: {
+        // Webpackで利用する時の設定
+        alias: {
+            vue$: 'vue/dist/vue.esm.js',
+        },
+        // 拡張子の省略
+        extensions: ['*', '.js', '.vue', '.json'],
+    },
+
+    plugins: [
+        // Vueを読み込めるようにするため
+        new VueLoaderPlugin(),
+    ],
 
     // ES5(IE11等)向けの設定
     target: ['web', 'es5'],
